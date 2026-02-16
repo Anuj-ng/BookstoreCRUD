@@ -89,6 +89,8 @@ const Home = () => {
             PublishDate: "",
             id: "",
           });
+          setIsUpdating(false); // ⭐ REQUIRED
+          setUpdateId(null);
           ToastSwal.fire({
             title: "Book Updated 📚",
             text: "Book Upated Successfully",
@@ -102,6 +104,7 @@ const Home = () => {
             icon: "error",
           });
           setIsUpdating(false);
+          setUpdateId(null);
         }
       }
     } catch (err) {
