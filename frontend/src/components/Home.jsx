@@ -35,7 +35,6 @@ const Home = () => {
     try {
       const { data } = await bookBaseUrl.get("booklist");
       setBookList(data?.BookList);
-      // console.log(data);
     } catch (error) {
       console.log(error);
     }
@@ -79,9 +78,7 @@ const Home = () => {
           });
         }
       } else {
-        const { data } = await bookBaseUrl.put("/updatebook", {
-          bookForm,
-        });
+        const { data } = await bookBaseUrl.put("/updatebook", bookForm);
 
         if (data?.success) {
           setBookForm({
